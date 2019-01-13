@@ -21,7 +21,7 @@ public class PrintboxApplication {
 	      PDDocument document = PDDocument.load(file); 
 	        
 	      System.out.println("PDF loaded"); 
-	        
+	         
 	      PDPage page = document.getPage(0);
 	      
 	      PDPageContentStream stream = new PDPageContentStream(document, page);
