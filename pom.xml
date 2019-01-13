@@ -17,6 +17,19 @@
 	<properties>
 		<java.version>1.8</java.version>
 	</properties>
+	
+	<repositories>
+	<repository>
+		<id>org.ghost4j.repository.releases</id>
+		<name>Ghost4J releases</name>
+		<url>http://repo.ghost4j.org/maven2/releases</url>
+	</repository>
+	<repository>
+		<id>org.ghost4j.repository.snapshots</id>
+		<name>Ghost4J snapshots</name>
+		<url>http://repo.ghost4j.org/maven2/snapshots</url>
+	</repository>
+	</repositories>
 
 	<dependencies>
 		<dependency>
@@ -30,43 +43,20 @@
 			<scope>test</scope>
 		</dependency>
 		
-		<!-- https://mvnrepository.com/artifact/org.apache.pdfbox/pdfbox -->
-      <dependency> 
-         <groupId>org.apache.pdfbox</groupId> 
-         <artifactId>pdfbox</artifactId> 
-         <version>2.0.1</version> 
-      </dependency>   
-   
-      <dependency> 
-         <groupId>org.apache.pdfbox</groupId> 
-         <artifactId>fontbox</artifactId> 
-         <version>2.0.0</version> 
-      </dependency>
-      
-      <dependency>  
-         <groupId>org.apache.pdfbox</groupId> 
-         <artifactId>jempbox</artifactId> 
-         <version>1.8.11</version> 
-      </dependency> 
-        
-      <dependency>
-         <groupId>org.apache.pdfbox</groupId> 
-         <artifactId>xmpbox</artifactId> 
-         <version>2.0.0</version> 
-      </dependency> 
-     
-      <dependency> 
-         <groupId>org.apache.pdfbox</groupId> 
-         <artifactId>preflight</artifactId> 
-         <version>2.0.0</version> 
-      </dependency> 
-     
-      <dependency> 
-         <groupId>org.apache.pdfbox</groupId> 
-         <artifactId>pdfbox-tools</artifactId> 
-         <version>2.0.0</version> 
-      </dependency>
-	</dependencies>
+		<!-- https://mvnrepository.com/artifact/org.ghost4j/ghost4j -->
+		<dependency>
+			<groupId>org.ghost4j</groupId>
+			<artifactId>ghost4j</artifactId>
+			<version>1.0.0</version>
+		</dependency>
+		
+		<dependency>
+	      <groupId>log4j</groupId>
+	      <artifactId>log4j</artifactId>
+	      <version>1.2.16</version>
+	    </dependency>
+		
+		</dependencies>
 
 	<build>
 		<plugins>

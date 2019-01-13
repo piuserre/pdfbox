@@ -2,11 +2,14 @@ package com.pdfbox.printbox;
 
 import java.io.File;
 import java.io.IOException;
+import java.util.List;
 
-import org.apache.pdfbox.pdmodel.PDDocument;
-import org.apache.pdfbox.pdmodel.PDDocumentInformation;
-import org.apache.pdfbox.pdmodel.PDPage;
-import org.apache.pdfbox.pdmodel.PDPageContentStream;
+import org.ghost4j.Ghostscript;
+import org.ghost4j.GhostscriptException;
+import org.ghost4j.analyzer.AnalysisItem;
+import org.ghost4j.analyzer.InkAnalyzer;
+import org.ghost4j.document.PDFDocument;
+import org.ghost4j.document.PSDocument;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
@@ -15,24 +18,26 @@ public class PrintboxApplication {
 
 	public static void main(String[] args) throws IOException {
 		SpringApplication.run(PrintboxApplication.class, args);
-		
-		//Loading an existing document 
-	      File file = new File("C:/PDFBOX/RF.12050809.pdf"); 
-	      PDDocument document = PDDocument.load(file); 
-	        
-	      System.out.println("PDF loaded"); 
-	         
-	      PDPage page = document.getPage(0);
-	      
-	      PDPageContentStream stream = new PDPageContentStream(document, page);
-	      
-	      System.out.println(stream.toString());
+		try {
+		 // load PS document
+	    PDFDocument document = new PDFDocument();
+	    document.load(new File("C:\\PDFBOX\\prova.pdf"));
 
-//	      //Saving the document 
-//	      document.save("C:/PDFBOX/sample.pdf");
+	    // create analyzer
+	    InkAnalyzer analyzer = new InkAnalyzer();
 
-	      //Closing the document  
-	      document.close(); 
+	    // analyze
+	    List<AnalysisItem> coverageData = analyzer.analyze(document);
+
+	    // print result
+	    for (AnalysisItem analysisItem : coverageData) {
+		System.out.println(analysisItem);
+
+	    }
+
+	} catch (Exception e) {
+	    System.out.println("ERROR: " + e.getMessage());
+	}
 	}
 
 }
