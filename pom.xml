@@ -12,24 +12,11 @@
 	<artifactId>printbox</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>printbox</name>
-	<description>Demo project for Spring Boot</description>
+	<description>Demo project</description>
 
 	<properties>
 		<java.version>1.8</java.version>
 	</properties>
-	
-	<repositories>
-	<repository>
-		<id>org.ghost4j.repository.releases</id>
-		<name>Ghost4J releases</name>
-		<url>http://repo.ghost4j.org/maven2/releases</url>
-	</repository>
-	<repository>
-		<id>org.ghost4j.repository.snapshots</id>
-		<name>Ghost4J snapshots</name>
-		<url>http://repo.ghost4j.org/maven2/snapshots</url>
-	</repository>
-	</repositories>
 
 	<dependencies>
 		<dependency>
@@ -43,20 +30,20 @@
 			<scope>test</scope>
 		</dependency>
 		
-		<!-- https://mvnrepository.com/artifact/org.ghost4j/ghost4j -->
+		<!-- https://mvnrepository.com/artifact/org.apache.pdfbox/pdfbox -->
 		<dependency>
-			<groupId>org.ghost4j</groupId>
-			<artifactId>ghost4j</artifactId>
-			<version>1.0.0</version>
+		    <groupId>org.apache.pdfbox</groupId>
+		    <artifactId>pdfbox</artifactId>
+		    <version>2.0.13</version>
 		</dependency>
 		
 		<dependency>
-	      <groupId>log4j</groupId>
-	      <artifactId>log4j</artifactId>
-	      <version>1.2.16</version>
-	    </dependency>
+            <groupId>com.googlecode.json-simple</groupId>
+            <artifactId>json-simple</artifactId>
+            <version>1.1.1</version>
+        </dependency>
 		
-		</dependencies>
+	</dependencies>
 
 	<build>
 		<plugins>
