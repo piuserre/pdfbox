@@ -1,3 +1,3 @@
 # pdfbox
 
-A service used to check whether a PDF file container colors
+A service used to check whether a PDF file contains colors
